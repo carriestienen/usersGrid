@@ -30,7 +30,7 @@ class ComputersGridPanel extends React.Component {
 
   render(){
     return (
-      <Grid rows={this.state.computers} fields={this.state.computerFields} />
+      <Grid prefix="/computers" rows={this.state.computers} fields={this.state.computerFields} />
     )
   }
 }

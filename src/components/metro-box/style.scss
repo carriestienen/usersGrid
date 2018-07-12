@@ -2,6 +2,13 @@
   display: inline-block;
   width: 170px;
   height: 190px;
-  background-color: blue;
+  background-color: DodgerBlue;
+  color: white;
   margin: 0 1rem;
+  font-family: helvetica;
+  text-align: center;
+  padding: 30px;
+  .count {
+	font-size: 40px;	
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 
 class UserPanel extends React.Component {
 
@@ -15,7 +16,11 @@ class UserPanel extends React.Component {
     })
   }
   render(){
-    return <div>{JSON.stringify(this.state.user)}</div>
+    //return <div>{JSON.stringify(this.state.user)}</div>
+    const properties = _.map(this.state.user, function(value,key){
+      return <div>{key}: {value}</div>
+    })
+    return <div>{properties}</div>
   }
 }
 

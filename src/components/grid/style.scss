@@ -13,3 +13,15 @@
 .row:hover {
   background: rgba(0,0,0,0.5);
 }
+
+.footer {
+	.more:hover, .less:hover, .next:hover, .previous:hover {
+		background: LightGray;
+	}
+	.more, .less, .next, .previous {
+		font-size: 20px;
+		display: inline-block;
+		padding: 2rem;
+		cursor: pointer;
+	}
+}

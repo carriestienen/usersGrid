@@ -31,7 +31,7 @@ class UsersGridPanel extends React.Component {
 
   render(){
     return (
-      <Grid rows={this.state.users} fields={this.state.userFields} />
+      <Grid prefix="/users" rows={this.state.users} fields={this.state.userFields} />
     )
   }
 }

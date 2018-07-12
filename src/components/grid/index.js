@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.scss'
+import {Link} from 'react-router-dom'
 
 class Grid extends React.Component {
   constructor(props){
@@ -16,6 +17,10 @@ class Grid extends React.Component {
     this.renderFooter = this.renderFooter.bind(this)
     this.currentRows = this.currentRows.bind(this)
     this.sortByField = this.sortByField.bind(this)
+    this.moreRows = this.moreRows.bind(this)
+    this.lessRows = this.lessRows.bind(this)
+    this.nextPage = this.nextPage.bind(this)
+    this.previousPage = this.previousPage.bind(this)
   }
 
   sortByField(field){
@@ -53,11 +58,44 @@ class Grid extends React.Component {
         return <div className='field' key={`${row.id} ${field.value}`}>{row[field.value]}</div>
       })
     }
-    return <div className='row' key={row.id}>{fields}</div>
+    return <Link to={`${this.props.prefix}/${row.id}`}>  <div className='row' key={row.id}>{fields}</div></Link>
+  }
+
+  moreRows(){
+    this.setState({pageSize: this.state.pageSize+10})
+  }
+
+  lessRows(){
+    this.setState({pageSize: this.state.pageSize-10})
+  }
+
+  nextPage(){
+    this.setState({currentPage: this.state.currentPage+1})
+  }
+
+  previousPage(){
+    this.setState({currentPage: this.state.currentPage-1})
   }
 
   renderFooter(){
-    return <div className='footer'>Footer</div>
+    return <div className='footer'>
+      <div className='more' onClick={this.moreRows}>
+      +  
+      </div>
+      <div className='less' onClick={this.lessRows}>
+      -
+      </div>
+      <br/>
+      <div className='next' onClick={this.nextPage}>
+      Next Page
+      </div>
+      <div className='previous' onClick={this.previousPage}>
+      Previous Page
+      </div>
+      <div>
+      Current Page: {this.state.currentPage} 
+      </div>
+    </div>
   }
 
   currentRows(){
