@@ -1,0 +1,15 @@
+
+
+.row, .header {
+  cursor: pointer;
+
+  .field {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    min-width: 20rem;
+  }
+}
+
+.row:hover {
+  background: rgba(0,0,0,0.5);
+}
