@@ -29,7 +29,7 @@ class Home extends React.Component {
           <MetroBox name="Users" icon="user" count={this.state.userCount}/>
         </Link>
         <Link to="/computers" className="trigger">
-         <MetroBox name="Computers" icon="computer" count={this.state.computerCount}/>
+         <MetroBox name="Computers" icon="desktop" count={this.state.computerCount}/>
         </Link>
       </div>
     )
