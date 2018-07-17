@@ -74,7 +74,9 @@ class Grid extends React.Component {
   }
 
   previousPage(){
-    this.setState({currentPage: this.state.currentPage-1})
+    if (this.state.currentPage > 1) {
+      this.setState({currentPage: this.state.currentPage-1})
+    }
   }
 
   renderFooter(){
@@ -86,15 +88,20 @@ class Grid extends React.Component {
       -
       </div>
       <br/>
-      <div className='next' onClick={this.nextPage}>
-      Next Page
-      </div>
       <div className='previous' onClick={this.previousPage}>
       Previous Page
+      </div>
+      <div className='next' onClick={this.nextPage}>
+      Next Page
       </div>
       <div>
       Current Page: {this.state.currentPage} 
       </div>
+      <Link to="/">
+      <div className='toHome'>
+      Home
+      </div>
+      </Link>
     </div>
   }
 
