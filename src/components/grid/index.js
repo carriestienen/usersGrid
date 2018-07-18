@@ -45,7 +45,7 @@ class Grid extends React.Component {
     let fields = 'No fields to display!';
     if(this.props.fields && this.props.fields.length > 0){
       fields = this.props.fields.map(field => {
-        return <div className='field' key={`${field.value}`} onClick={this.sortByField.bind(this, field)}>{field.name}</div>
+        return <div className='fieldHeader' key={`${field.value}`} onClick={this.sortByField.bind(this, field)}>{field.name}</div>
       })
     }
     return <div className='header'>{fields}</div>
