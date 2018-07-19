@@ -14,13 +14,17 @@ html {
     font-size: 40px; }
 .row, .header {
   cursor: pointer; }
+  .row .fieldHeader, .header .fieldHeader {
+    font-weight: bold;
+    font-size: 20px; }
   .row .field, .header .field {
+    font-family: helvetica;
     display: inline-block;
     padding: 0.25rem 0.5rem;
     min-width: 20rem; }
 
 .row:hover {
-  background: rgba(0, 0, 0, 0.5); }
+  background: rgba(0, 0, 0, 0.3); }
 
 .footer .more:hover, .footer .less:hover, .footer .next:hover, .footer .previous:hover {
   background: LightGray; }
@@ -30,3 +34,13 @@ html {
   display: inline-block;
   padding: 2rem;
   cursor: pointer; }
+
+.footer .toHome {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; }
