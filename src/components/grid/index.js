@@ -58,7 +58,9 @@ class Grid extends React.Component {
         return <div className='field' key={`${row.id} ${field.value}`}>{row[field.value]}</div>
       })
     }
-    return <Link to={`${this.props.prefix}/${row.id}`}>  <div className='row' key={row.id}>{fields}</div></Link>
+    return <Link to={`${this.props.prefix}/${row.id}`}>
+      <div className='row' key={row.id}>{fields}</div>
+    </Link>
   }
 
   moreRows(){
@@ -99,9 +101,9 @@ class Grid extends React.Component {
       </div>
       <br/>
       <Link to="/">
-      <div className='toHome'>
-      Home
-      </div>
+        <div className='toHome'>
+          Home
+        </div>
       </Link>
     </div>
   }
@@ -121,7 +123,9 @@ class Grid extends React.Component {
     const rows = this.currentRows().map(row => { return this.renderRow(row)});
     return <div className='grid'>
       {this.renderHeader()}
-      {rows}
+      <div className="rows">
+        {rows}
+      </div>
       {this.renderFooter()}
     </div>
   }

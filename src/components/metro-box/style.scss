@@ -8,7 +8,12 @@
   font-family: helvetica;
   text-align: center;
   padding: 30px;
+
+  .name {
+    margin-bottom: 0.8rem;
+  }
+
   .count {
-	font-size: 40px;	
+	 font-size: 40px;	
   }
 }
