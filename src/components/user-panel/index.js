@@ -1,5 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
+import './style.scss'
+import {Link} from 'react-router-dom'
 
 class UserPanel extends React.Component {
 
@@ -18,9 +20,19 @@ class UserPanel extends React.Component {
   render(){
     //return <div>{JSON.stringify(this.state.user)}</div>
     const properties = _.map(this.state.user, function(value,key){
-      return <tr><td><b>{key}</b></td> <td>{value}</td></tr>
+      return <tr key={key}><td><b className="user-key">{key}</b></td><td className="user-value">{value}</td></tr>
     })
-    return <table id="properties">{properties}</table>
+
+    return <div className="users-panel">
+      <table id="properties"><tbody>{properties}</tbody></table>
+      <div>
+        <Link to="/">
+          <div className='toHome'>
+            Home
+          </div>
+        </Link>
+      </div>
+    </div>
   }
 }
 

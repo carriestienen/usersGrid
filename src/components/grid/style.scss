@@ -7,6 +7,22 @@
   width: 100%;
   height: 100%;
   text-align: center;
+
+  .home-button {
+    font-family: helvetica;
+    position: absolute;
+    right: 0rem;
+    top: 0.1rem;
+    padding: 0 2rem;
+  }
+
+  .home-button:hover {
+    background: rgba(0,0,0,0.3);
+  }
+}
+
+.rows {
+  padding-top: 1rem;
 }
 
 .row, .header {
@@ -26,10 +42,13 @@
 }
 
 .row:hover {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.1);
 }
 
 .footer {
+  padding-bottom: 4rem;
+  width: 100%;
+
 	.more:hover, .less:hover, .next:hover, .previous:hover {
 		background: LightGray;
 	}
@@ -39,15 +58,20 @@
 		padding: 2rem;
 		cursor: pointer;
 	}
+  .plus-minus {
+    position: absolute;
+    left: 2rem;
+  }
+  .previous-next {
+    position: absolute;
+    right: 2rem;
+  }
 
-	.toHome {
-    	background-color: DodgerBlue;
-    	border: none;
-    	color: white;
-	    padding: 15px 32px;
-    	text-align: center;
-	    text-decoration: none;
-    	display: inline-block;
-	    font-size: 16px;
-	}
+  .page-count {
+    padding-top: 2.3rem;
+  }
+}
+
+.nav-wrapper{
+  background-color: DodgerBlue;
 }

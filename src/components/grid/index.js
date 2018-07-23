@@ -48,7 +48,14 @@ class Grid extends React.Component {
         return <div className='field fieldHeader' key={`${field.value}`} onClick={this.sortByField.bind(this, field)}>{field.name}</div>
       })
     }
-    return <div className='header'>{fields}</div>
+    return <nav>
+      <div className="nav-wrapper">
+        <div className='header'>
+          {fields}              
+          <a className='home-button' href="/">Home</a>
+        </div>
+      </div>
+    </nav>
   }
 
   renderRow(row){
@@ -58,8 +65,8 @@ class Grid extends React.Component {
         return <div className='field' key={`${row.id} ${field.value}`}>{row[field.value]}</div>
       })
     }
-    return <Link to={`${this.props.prefix}/${row.id}`}>
-      <div className='row' key={row.id}>{fields}</div>
+    return <Link key={row.id} to={`${this.props.prefix}/${row.id}`}>
+      <div className='row'>{fields}</div>
     </Link>
   }
 
@@ -83,28 +90,25 @@ class Grid extends React.Component {
 
   renderFooter(){
     return <div className='footer'>
-      <div className='more' onClick={this.moreRows}>
-      +  
-      </div>
-      <div className='less' onClick={this.lessRows}>
-      -
-      </div>
-      <br/>
-      <div className='previous' onClick={this.previousPage}>
-      Previous Page
-      </div>
-      <div className='next' onClick={this.nextPage}>
-      Next Page
-      </div>
-      <div>
+      <span className='plus-minus'>
+        <div className='more' onClick={this.moreRows}>
+        +  
+        </div>
+        <div className='less' onClick={this.lessRows}>
+        -
+        </div>
+      </span>
+      <span className='previous-next'>
+        <div className='previous' onClick={this.previousPage}>
+        Previous Page
+        </div>
+        <div className='next' onClick={this.nextPage}>
+        Next Page
+        </div>
+      </span>
+      <div className='page-count'>
       Current Page: {this.state.currentPage} 
       </div>
-      <br/>
-      <Link to="/">
-        <div className='toHome'>
-          Home
-        </div>
-      </Link>
     </div>
   }
 

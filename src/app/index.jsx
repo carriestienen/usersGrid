@@ -8,7 +8,7 @@ import ComputerPanel from '../components/computer-panel'
 
 export default appProps => {
   return <Router>
-      <div className='applicaton-container'>
+      <div className='application-container'>
         <Route exact path="/" render={(props) => {
           const allProps = Object.assign(appProps, props)
           return <Home {...allProps} />
